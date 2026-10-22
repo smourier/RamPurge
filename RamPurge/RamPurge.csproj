@@ -1,0 +1,57 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net10.0</TargetFramework>
+		<Nullable>enable</Nullable>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<PublishAot>true</PublishAot>
+		<DisableRuntimeMarshalling>true</DisableRuntimeMarshalling>
+		
+		<Title>RamPurge</Title>
+		<Company>Simon Mourier</Company>
+		<Authors>Simon Mourier</Authors>
+		<Product>RamPurge</Product>
+		<PackageTags>Memory;Cleanup;Optimization</PackageTags>
+		<Copyright>Copyright (C) 2025-$([System.DateTime]::UtcNow.ToString("yyyy")) Simon Mourier. All rights reserved.</Copyright>
+		<Description>RamPurge</Description>
+		<Version>1.0.0.0</Version>
+		<ProductVersion>1.0.0.0</ProductVersion>
+		<FileVersion>1.0.0.0</FileVersion>
+		<InformationalVersion>1.0.0.0</InformationalVersion>
+		<SourceRevisionId>$([System.DateTime]::UtcNow.ToString("yyyyMMddHH"))</SourceRevisionId>
+		<ApplicationIcon>RamPurge.ico</ApplicationIcon>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <Content Include="RamPurge.ico" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Using Include="RamPurge.Interop" />
+		<Using Include="RamPurge.Interop.NativeMethods" Static="true" />
+		<Using Include="RamPurge.Properties" />
+		<Using Include="Microsoft.Win32.SafeHandles" />
+		<Using Include="System" />
+		<Using Include="System.Collections.Generic" />
+		<Using Include="System.CommandLine" />
+		<Using Include="System.ComponentModel" />
+		<Using Include="System.Diagnostics" />
+		<Using Include="System.IO" />
+		<Using Include="System.Linq" />
+		<Using Include="System.Numerics" />
+		<Using Include="System.Runtime.CompilerServices" />
+		<Using Include="System.Runtime.InteropServices" />
+		<Using Include="System.Text" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Update="Properties\Resources.Designer.cs" DesignTime="True" AutoGen="True" DependentUpon="Resources.resx" />
+		<EmbeddedResource Update="Properties\Resources.resx" Generator="ResXFileCodeGenerator" LastGenOutput="Resources.Designer.cs" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="System.CommandLine" Version="2.0.13" />
+	</ItemGroup>
+
+</Project>
